@@ -1,5 +1,7 @@
 ## Clinical Trial Trends Explorer
 
+**Live demo:** [clinical-trial-trends.streamlit.app](https://clinical-trial-trends.streamlit.app)
+
 Exploratory analysis of **10,000 clinical trials** from ClinicalTrials.gov, examining research trends, sponsor patterns, phase completion rates, and geographic distribution.
 
 ### Analysis Highlights
@@ -31,10 +33,13 @@ Exploratory analysis of **10,000 clinical trials** from ClinicalTrials.gov, exam
 ```bash
 pip install -r requirements.txt
 
-# Fetch 10,000 trials from ClinicalTrials.gov API
+# Fetch 10,000 trials from ClinicalTrials.gov API (skip if data/clinical_trials.csv already exists)
 python src/fetch_trials.py
 
-# Open the notebook
+# Interactive dashboard
+streamlit run app.py
+
+# Or open the source notebook for one-shot analysis
 jupyter notebook analysis.ipynb
 ```
 
@@ -47,7 +52,7 @@ jupyter notebook analysis.ipynb
 ![Trials Over Time](outputs/trials_over_time.png)
 
 ### Tools Used
-- Python (pandas, matplotlib, seaborn)
-- Jupyter Notebook
-- ClinicalTrials.gov REST API
-- Data analysis and visualization
+- Python (pandas, matplotlib, seaborn, plotly)
+- Streamlit (interactive dashboard)
+- Jupyter Notebook (source analysis)
+- ClinicalTrials.gov REST API v2
